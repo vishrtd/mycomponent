@@ -19,6 +19,10 @@ Keyword arguments:
 - label (string; required):
     A label that will be printed when this component is rendered.
 
+- n_clicks (number; optional):
+    Dash-assigned callback that should be called to report property
+    changes  to Dash, to make them available for callbacks.
+
 - value (string; optional):
     The value displayed in the input."""
     _children_props = []
@@ -26,10 +30,10 @@ Keyword arguments:
     _namespace = 'mycomponent'
     _type = 'PrimaryButton'
     @_explicitize_args
-    def __init__(self, id=Component.UNDEFINED, label=Component.REQUIRED, value=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['id', 'label', 'value']
+    def __init__(self, id=Component.UNDEFINED, label=Component.REQUIRED, value=Component.UNDEFINED, n_clicks=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['id', 'label', 'n_clicks', 'value']
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['id', 'label', 'value']
+        self.available_properties = ['id', 'label', 'n_clicks', 'value']
         self.available_wildcard_properties =            []
         _explicit_args = kwargs.pop('_explicit_args')
         _locals = locals()

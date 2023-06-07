@@ -10,26 +10,17 @@ import PropTypes from 'prop-types';
  */
 export default class PrimaryButton extends Component {
     render() {
-        const {id, label, setProps, value} = this.props;
-
+        const {id, label, setProps, value, n_clicks} = this.props;
+        onClick: ()=> {n_clicks++}
         return (
             <div id={id}>
                 ExampleComponent: {label}&nbsp;
-                <input
-                    value={value}
-                    onChange={
-                        /*
-                         * Send the new value to the parent component.
-                         * setProps is a prop that is automatically supplied
-                         * by dash's front-end ("dash-renderer").
-                         * In a Dash app, this will update the component's
-                         * props and send the data back to the Python Dash
-                         * app server if a callback uses the modified prop as
-                         * Input or State.
-                         */
-                        e => setProps({ value: e.target.value })
-                    }
-                />
+                <button type="button" id={id}
+                    style={{
+                        backgroundColor: '#4CAF50', border: 'none', color: 'white', padding: '15px 32px',
+                        textAlign: 'center', textDecoration: 'none', display: 'inline-block', fontSize: 16
+                    }}
+                > {label}  </button>
             </div>
         );
     }
@@ -54,6 +45,11 @@ PrimaryButton.propTypes = {
     value: PropTypes.string,
 
     /**
+     * Dash-assigned callback that should be called to report property changes
+     * to Dash, to make them available for callbacks.
+     */
+     n_clicks: PropTypes.number,
+     /**
      * Dash-assigned callback that should be called to report property changes
      * to Dash, to make them available for callbacks.
      */

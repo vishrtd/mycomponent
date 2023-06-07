@@ -10,13 +10,16 @@ ExampleComponent is an example component. It takes a property, `label`, and di
 }
 
 \usage{
-''PrimaryButton(id=NULL, label=NULL, value=NULL)
+''PrimaryButton(id=NULL, label=NULL, n_clicks=NULL, value=NULL)
 }
 
 \arguments{
 \item{id}{Character. The ID used to identify this component in Dash callbacks.}
 
 \item{label}{Character. A label that will be printed when this component is rendered.}
+
+\item{n_clicks}{Numeric. Dash-assigned callback that should be called to report property changes
+to Dash, to make them available for callbacks.}
 
 \item{value}{Character. The value displayed in the input.}
 }

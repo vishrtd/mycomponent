@@ -1,4 +1,211 @@
 {
+  "src/lib/components/Button/Button.js": {
+    "description": "A component for creating Bootstrap buttons with different style options. The\r\nButton component can act as a HTML button, link (<a>) or can be used like a\r\ndash_core_components style `Link` for navigating between pages of a Dash app.\r\n\nUse the `n_clicks` prop to trigger callbacks when the button has been\r\nclicked.",
+    "displayName": "Button",
+    "methods": [],
+    "props": {
+      "id": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The ID of this component, used to identify dash components\r\nin callbacks. The ID needs to be unique across all of the\r\ncomponents in an app."
+      },
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "The children of this component."
+      },
+      "class_name": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Often used with CSS to style elements with common properties."
+      },
+      "className": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "**DEPRECATED** Use `class_name` instead.\r\n\nOften used with CSS to style elements with common properties."
+      },
+      "style": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Defines CSS styles which will override styles previously set."
+      },
+      "key": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "A unique identifier for the component, used to improve\r\nperformance by React.js while rendering components\r\nSee https://reactjs.org/docs/lists-and-keys.html for more info"
+      },
+      "href": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Pass a URL (relative or absolute) to make the menu entry a link."
+      },
+      "external_link": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "If true, the browser will treat this as an external link,\r\nforcing a page refresh at the new location. If false,\r\nthis just changes the location without triggering a page\r\nrefresh. Use this if you are observing dcc.Location, for\r\ninstance. Defaults to true for absolute URLs and false\r\notherwise."
+      },
+      "n_clicks": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "An integer that represents the number of times\r\nthat this element has been clicked on.",
+        "defaultValue": {
+          "value": "0",
+          "computed": false
+        }
+      },
+      "n_clicks_timestamp": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Use of *_timestamp props has been deprecated in Dash in favour of dash.callback_context.\r\nSee \"How do I determine which Input has changed?\" in the Dash FAQs https://dash.plot.ly/faqs.\r\n\nAn integer that represents the time (in ms since 1970)\r\nat which n_clicks changed. This can be used to tell\r\nwhich button was changed most recently.",
+        "defaultValue": {
+          "value": "-1",
+          "computed": false
+        }
+      },
+      "active": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Whether button is in active state. Default: False."
+      },
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Button color, options: primary, secondary, success, info, warning, danger,\r\nlink. Default: primary."
+      },
+      "disabled": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Disable button (make unclickable). Default: False."
+      },
+      "size": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Button size, options: 'lg', 'md', 'sm'."
+      },
+      "title": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Sets the title attribute of the underlying HTML button."
+      },
+      "outline": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Set outline button style, which removes background images and colors for a\r\nlightweight style."
+      },
+      "loading_state": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "is_loading": {
+              "name": "bool",
+              "description": "Determines if the component is loading or not",
+              "required": false
+            },
+            "prop_name": {
+              "name": "string",
+              "description": "Holds which property is loading",
+              "required": false
+            },
+            "component_name": {
+              "name": "string",
+              "description": "Holds the name of the component that is loading",
+              "required": false
+            }
+          }
+        },
+        "required": false,
+        "description": "Object that holds the loading state object coming from dash-renderer"
+      },
+      "target": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Target attribute to pass on to link if using Button as an external link."
+      },
+      "type": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'button'",
+              "computed": false
+            },
+            {
+              "value": "'reset'",
+              "computed": false
+            },
+            {
+              "value": "'submit'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "The default behavior of the button. Possible values are: \"button\", \"reset\",\r\n\"submit\". If left unspecified the default depends on usage: for buttons\r\nassociated with a form (e.g. a dbc.Button inside a dbc.Form) the default is\r\n\"submit\". Otherwise the default is \"button\"."
+      },
+      "download": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Indicates that the hyperlink is to be used for downloading a resource."
+      },
+      "name": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The name of the button, submitted as a pair with the button\u2019s value as part\r\nof the form data."
+      },
+      "value": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Defines the value associated with the button\u2019s name when it\u2019s submitted\r\nwith the form data. This value is passed to the server in params when the\r\nform is submitted."
+      },
+      "rel": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Set the rel attribute when Button is being used as a Link."
+      }
+    }
+  },
   "src/lib/components/PrimaryButton.react.js": {
     "description": "ExampleComponent is an example component.\r\nIt takes a property, `label`, and\r\ndisplays it.\r\nIt renders an input with the property `value`\r\nwhich is editable by the user.",
     "displayName": "PrimaryButton",
@@ -24,6 +231,13 @@
         },
         "required": false,
         "description": "The value displayed in the input."
+      },
+      "n_clicks": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Dash-assigned callback that should be called to report property changes\r\nto Dash, to make them available for callbacks."
       },
       "setProps": {
         "type": {

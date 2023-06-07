@@ -4,17 +4,18 @@ from dash import Dash, callback, html, Input, Output
 app = Dash(__name__)
 
 app.layout = html.Div([
-    mycomponent.PrimaryButton(
+    mycomponent.Button(
+        'Button',
         id='input',
-        value='my-value',
-        label='my-label'
+        # value='Button',
     ),
     html.Div(id='output')
 ])
 
 
-@callback(Output('output', 'children'), Input('input', 'value'))
+@callback(Output('output', 'children'), Input('input', 'n_clicks'))
 def display_output(value):
+    print(f"Button Clicked!!: {value}")
     return 'You have entered {}'.format(value)
 
 

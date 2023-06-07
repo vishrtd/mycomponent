@@ -1,9 +1,9 @@
 # AUTO GENERATED FILE - DO NOT EDIT
 
 #' @export
-''PrimaryButton <- function(id=NULL, label=NULL, value=NULL) {
+''PrimaryButton <- function(id=NULL, label=NULL, n_clicks=NULL, value=NULL) {
     
-    props <- list(id=id, label=label, value=value)
+    props <- list(id=id, label=label, n_clicks=n_clicks, value=value)
     if (length(props) > 0) {
         props <- props[!vapply(props, is.null, logical(1))]
     }
@@ -11,7 +11,7 @@
         props = props,
         type = 'PrimaryButton',
         namespace = 'mycomponent',
-        propNames = c('id', 'label', 'value'),
+        propNames = c('id', 'label', 'n_clicks', 'value'),
         package = 'mycomponent'
         )
 
